@@ -1,4 +1,8 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lazy_app/widgets/lazyExpansionTile.dart';
+import 'package:lazy_app/widgets/lazySwitchTile.dart';
 
 void main() {
   runApp(MyApp());
@@ -21,23 +25,68 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-
-        title: Text("Baba booie"),
+        backgroundColor: Colors.white,
+        title: Center(
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Text(
+                  "LazyApp",
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
+              DefaultTextStyle(
+                style: const TextStyle(
+                    fontSize: 10.0, fontFamily: 'Agne', color: Colors.black),
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 5.0),
+                  child: AnimatedTextKit(
+                    repeatForever: true,
+                    stopPauseOnTap: true,
+                    animatedTexts: [
+                      TypewriterAnimatedText(
+                          'A reason to not get off your ass'),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '420',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+            LazyExpansionTile(
+              roomCode: 'LR',
+              roomName: 'Living Room',
+              children: [
+                LazySwitchTile(
+                  name: 'Hello World',
+                  deviceCode: 'CD',
+                  fbValue: false,
+                ),
+                LazySwitchTile(
+                  name: 'Hello World',
+                  deviceCode: 'CD',
+                  fbValue: false,
+                ),
+                LazySwitchTile(
+                  name: 'Hello World',
+                  deviceCode: 'CD',
+                  fbValue: false,
+                ),
+                LazySwitchTile(
+                  name: 'Hello World',
+                  deviceCode: 'CD',
+                  fbValue: false,
+                ),
+              ],
+            )
           ],
         ),
       ),
