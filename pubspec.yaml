@@ -25,6 +25,8 @@ dependencies:
     sdk: flutter
 
   firebase_core: ^1.2.0
+  firebase_database: ^7.0.0
+
   animated_text_kit: ^4.2.1
   provider: ^5.0.0
 

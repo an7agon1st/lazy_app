@@ -1,9 +1,10 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
-import 'package:lazy_app/services/firebaseService.dart';
 import 'package:lazy_app/widgets/lazyAppBar.dart';
 import 'package:lazy_app/widgets/lazyExpansionTile.dart';
 import 'package:lazy_app/widgets/lazySwitchTile.dart';
-import 'package:provider/provider.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -19,24 +20,12 @@ class HomePage extends StatelessWidget {
               roomName: 'Living Room',
               children: [
                 LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
+                  name: 'Lights',
+                  deviceCode: 'LR0',
                 ),
                 LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
-                ),
-                LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
-                ),
-                LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
+                  name: 'Fan',
+                  deviceCode: 'LR1',
                 ),
               ],
             )

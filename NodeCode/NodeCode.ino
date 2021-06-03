@@ -1,6 +1,7 @@
 /**************************************************************************
  * Pin D7 and D8 are reserved for indicator LEDs
  * Pins D0 - D6 are for connecting devices
+ * TODO: Fix True false flip error
 
  **************************************************************************/
 

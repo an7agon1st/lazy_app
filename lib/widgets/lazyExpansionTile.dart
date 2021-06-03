@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:lazy_app/widgets/lazySwitchTile.dart';
 
 class LazyExpansionTile extends StatelessWidget {
   LazyExpansionTile({
