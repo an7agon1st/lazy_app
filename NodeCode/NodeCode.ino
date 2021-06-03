@@ -78,7 +78,7 @@ void setup() {
   Serial.println("FFbase connected");
 
   // get number of devices
-  Firebase.getInt(firebaseRead, dbAddr + "/device");
+  Firebase.getInt(firebaseRead, dbAddr + deviceName + "/device");
   device = firebaseRead.intData();
   Serial.println("Number of devices: " + String(device));
   delay(1000);
@@ -95,7 +95,7 @@ void loop() {
   Serial.println("Looping\n\n");
   int dev = device;
   while(dev>=0){
-    if(Firebase.getBool(firebaseLive, dbAddr + deviceName + String(dev))){
+    if(Firebase.getBool(firebaseLive, dbAddr + deviceName + deviceName + String(dev))){
       Serial.println("Device " + String(dev) + ": " + String(firebaseLive.boolData()));
 
       // if data has changed
