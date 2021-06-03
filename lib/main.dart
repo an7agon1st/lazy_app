@@ -1,10 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:lazy_app/pages/HomePage.dart';
 import 'package:lazy_app/services/firebaseService.dart';
 import 'package:lazy_app/widgets/lazyAppBar.dart';
-import 'package:lazy_app/widgets/lazyExpansionTile.dart';
-import 'package:lazy_app/widgets/lazySwitchTile.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -64,56 +63,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: LazyAppBar(),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            TextButton(
-                onPressed: () {
-                  print(Provider.of<LazyFirebaseService>(context, listen: false)
-                      .firebaseApp
-                      .toString());
-                },
-                child: Text('Firebase App')),
-            LazyExpansionTile(
-              roomCode: 'LR',
-              roomName: 'Living Room',
-              children: [
-                LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
-                ),
-                LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
-                ),
-                LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
-                ),
-                LazySwitchTile(
-                  name: 'Hello World',
-                  deviceCode: 'CD',
-                  fbValue: false,
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }
