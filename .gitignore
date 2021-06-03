@@ -47,3 +47,4 @@ app.*.map.json
 
 # Custom version with firebase key and secret
 /custom_version/
+android/app/google-services.json
